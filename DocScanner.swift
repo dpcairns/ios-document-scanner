@@ -44,7 +44,7 @@ public class DocScanner: NSObject, VNDocumentCameraViewControllerDelegate {
         errorHandler: @escaping (String) -> Void = {_ in },
         cancelHandler: @escaping () -> Void = {},
         responseType: String = ResponseType.imageFilePath,
-        croppedImageQuality: Int = 100
+        croppedImageQuality: Int = 50
     ) {
         self.viewController = viewController
         self.successHandler = successHandler
@@ -97,14 +97,14 @@ public class DocScanner: NSObject, VNDocumentCameraViewControllerDelegate {
         errorHandler: @escaping (String) -> Void = {_ in },
         cancelHandler: @escaping () -> Void = {},
         responseType: String? = ResponseType.imageFilePath,
-        croppedImageQuality: Int? = 100
+        croppedImageQuality: Int? = 50
     ) {
         self.viewController = viewController
         self.successHandler = successHandler
         self.errorHandler = errorHandler
         self.cancelHandler = cancelHandler
         self.responseType = responseType ?? ResponseType.imageFilePath
-        self.croppedImageQuality = croppedImageQuality ?? 100
+        self.croppedImageQuality = croppedImageQuality ?? 50
         
         self.startScan()
     }
